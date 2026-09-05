@@ -1,0 +1,544 @@
+.expanded-fate { width: min(1180px, 90%); padding: 29px 0 34px; }
+.expanded-fate .screen-heading { margin-bottom: 25px; }
+.expanded-fate .screen-heading h1 { font-size: 44px; }
+.fate-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); margin-bottom: 25px; }
+.fate-toolbar .panel-tabs { border: 0; gap: 24px; }
+.fate-toolbar .panel-tabs > button { font-size: 9px; padding: 19px 2px; letter-spacing: 1.2px; }
+.wallet { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.wallet > span { display: flex; align-items: center; gap: 7px; color: #c7ad74; }
+.wallet strong { font-family: var(--pixel); font-size: 24px; font-weight: 500; }
+.wallet small { font-size: 6px; letter-spacing: 1px; color: #8f8d71; }
+.wallet .shard-balance { color: #baa4d9; }
+.exchange-button { display: flex; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid #95835960; background: #7973430c; color: #bfb08b; font-size: 7px; letter-spacing: 1px; }
+.exchange-button:hover { background: #b89e4d15; border-color: #b49a62; color: #e1c991; }
+.shop-notice { display: flex; align-items: center; gap: 10px; border-left: 2px solid #9aa778; background: #96a66409; margin: -6px 0 21px; padding: 9px 12px; color: #b4bf98; font-size: 10px; line-height: 1.6; }
+.shop-notice > span { flex: 1; }
+.shop-notice .icon-button { height: 22px; width: 22px; }
+.shop-intro { margin-bottom: 24px; }
+.shop-intro > span { font-family: var(--pixel); font-size: 25px; color: #c8bd9d; }
+.shop-intro > p { margin-top: 6px; font-size: 10px; color: #858d79; line-height: 1.7; }
+.expanded-roster { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
+.expanded-fate .expanded-roster .character-art { height: 245px; }
+.hero-portrait { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; image-rendering: pixelated; }
+.atlas-portrait { overflow: hidden; }
+.character-art .hero-portrait { filter: saturate(.72) brightness(.8); transition: filter .4s, transform .55s; }
+.character-card.selected .hero-portrait, .character-card:hover .hero-portrait { filter: saturate(1) brightness(1.03); transform: scale(1.035); }
+.expanded-fate .character-card-label { padding: 4px 18px 16px; }
+.expanded-fate .character-card-label h2 { font-size: 26px; margin: 6px 0 12px; }
+.expanded-fate .character-role { font-size: 6.5px; letter-spacing: 1.2px; }
+.expanded-fate .character-traits { gap: 15px; font-size: 8px; color: #a0a48d; }
+.hero-ownership { display: flex; align-items: center; gap: 6px; border-top: 1px solid #9e945127; color: #969a7b; padding-top: 12px; margin-top: 14px; font-size: 6.5px; letter-spacing: 1.15px; }
+.free-dot { display: inline-block; width: 3px; height: 3px; background: #8a9f6c; }
+.phantom-card { --character-color: #c5a2ff; border-color: #936ab655; }
+.phantom-card.selected { box-shadow: 0 0 26px #7641a618; background: #1a1523; }
+.phantom-card .character-art-shade { background: linear-gradient(180deg, #08061033, transparent 40%, transparent 65%, #14121b); }
+.phantom-card .character-number { color: #ba93e1; }
+.phantom-card .character-art { background: #0f0b17; }
+.phantom-card .character-art > img { object-position: center 21%; }
+.phantom-card .hero-ownership { color: #bd9bdf; border-color: #a07bcc38; }
+.phantom-aura { position: absolute; inset: 30% 0 0; pointer-events: none; background: radial-gradient(ellipse at 50% 80%, #a778dd25, transparent 64%); animation: phantom-breathe 4s ease-in-out infinite; mix-blend-mode: screen; }
+.expanded-fate .shop-roster { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 15px; }
+.expanded-fate .shop-roster .character-art { height: 239px; }
+.shop-roster .character-card-label h2 { font-size: 21px; line-height: 1.2; min-height: 50px; display: flex; align-items: center; margin: 4px 0 6px; }
+.shop-roster .character-card-label { padding: 3px 14px 15px; }
+.shop-roster .character-role { font-size: 6px; letter-spacing: .8px; }
+.shop-roster .character-traits { font-size: 7px; gap: 10px; }
+.shop-roster .hero-ownership { color: #b9a1d5; font-size: 6.5px; letter-spacing: .6px; }
+.shop-roster .character-number { font-size: 15px; left: 13px; top: 13px; }
+.shop-roster .selection-mark { top: 12px; right: 12px; }
+.unowned-card .selection-mark { color: #b8aa8a; background: #0e140ca1; }
+.unowned-card.selected .selection-mark { color: #182012; background: var(--character-color); }
+.hero-detail { margin-top: 25px; border-top: 1px solid var(--line); animation: screen-in .25s both; }
+.hero-detail-summary { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-top: 22px; }
+.hero-detail-summary h2 { font-family: var(--pixel); color: #d9c8a2; font-size: 30px; font-weight: 500; margin: 5px 0 7px; }
+.hero-detail-summary p { color: #8c9079; font-size: 10px; line-height: 1.7; }
+.hero-attributes { min-width: 235px; display: flex; flex-direction: column; gap: 8px; }
+.hero-attributes > div { display: flex; align-items: center; gap: 10px; }
+.hero-attributes > div > span { width: 55px; font-size: 7px; letter-spacing: 1.1px; color: #8b9176; }
+.hero-attributes > div > div { display: flex; gap: 4px; }
+.hero-attributes i { display: block; width: 21px; height: 5px; background: #56614333; }
+.hero-attributes i.filled { background: var(--attribute-color); opacity: .8; }
+.hero-attributes small { font-family: var(--pixel); font-size: 12px; color: #c6a5ed; }
+.expanded-fate .character-skills { gap: 28px; margin: 24px 0; }
+.expanded-fate .skill-description p { max-width: 100%; color: #969b86; font-size: 10px; }
+.expanded-fate .skill-description h3 { color: #d1c7a8; font-size: 12px; }
+.phantom-detail { border-top-color: #b087d83a; }
+.phantom-detail .hero-detail-summary h2 { color: #ccb1ee; }
+.phantom-detail .hero-detail-summary .micro-label { color: #aa85d0; }
+.phantom-extra-skills { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 0 0 24px; border-top: 1px solid #ab86d22a; padding-top: 20px; }
+.phantom-extra-skills > div { display: flex; gap: 13px; }
+.phantom-extra-skills svg { color: #c4a0ef; margin-top: 5px; }
+.phantom-extra-skills h3 { color: #d0b7ec; font-size: 12px; margin: 6px 0; }
+.phantom-extra-skills .micro-label { color: #8b72a5; font-size: 6px; }
+.phantom-extra-skills p { font-size: 10px; line-height: 1.8; color: #9c8cae; }
+.hero-purchase-row { display: flex; align-items: center; justify-content: space-between; padding: 17px 0 20px; gap: 20px; border-top: 1px solid #938d5430; }
+.hero-purchase-row > span { color: #9b9982; font-size: 10px; }
+.phantom-button { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 45px; border: 1px solid #b58ddd; padding: 0 19px; color: #ddc6fc; background: linear-gradient(100deg, #322340, #20192e); font-size: 9px; letter-spacing: 1px; transition: background .2s, box-shadow .2s, transform .2s; }
+.phantom-button:hover { background: linear-gradient(100deg, #453059, #342246); box-shadow: 0 0 26px #9b59d42b; transform: translateY(-1px); }
+.phantom-button:active { transform: translateY(1px); }
+.phantom-begin { background: linear-gradient(110deg, #c7abe8, #a482c9); border-color: #d6bcec; box-shadow: 0 3px 0 #514063; }
+.phantom-begin:hover:not(:disabled) { background: linear-gradient(110deg, #e0c6ff, #b593d6); box-shadow: 0 3px 0 #615072, 0 5px 30px #ac72e325; }
+.dungeon-picker { border-top: 1px solid var(--line); padding-top: 20px; margin-bottom: 23px; }
+.section-subheading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 15px; }
+.section-subheading > span:last-child { font-size: 6px; color: #79866d; letter-spacing: 1.4px; }
+.dungeon-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.dungeon-option { position: relative; min-height: 160px; overflow: hidden; padding: 21px 20px; border: 1px solid #7b795a50; background: #10170f; text-align: left; display: flex; align-items: flex-end; transition: border-color .2s; }
+.dungeon-option > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; filter: brightness(.5) saturate(.6); transition: filter .35s, transform .6s; }
+.dungeon-option:hover > img, .dungeon-option.selected > img { filter: brightness(.8) saturate(.9); transform: scale(1.03); }
+.dungeon-option.selected { border-color: var(--dungeon-color); }
+.dungeon-option-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #060b0744, #091008cc 65%, #0a110eee); }
+.dungeon-option > div:not(.dungeon-option-shade) { position: relative; padding-right: 5px; }
+.dungeon-option > div > span { color: var(--dungeon-color); font-size: 5.5px; letter-spacing: 1.3px; }
+.dungeon-option h3 { font-family: var(--pixel); font-size: 25px; color: #ded2b3; font-weight: 500; margin: 6px 0 7px; }
+.dungeon-option p { font-size: 9px; color: #a0a48c; line-height: 1.7; max-width: 310px; }
+.dungeon-check { position: absolute; right: 12px; top: 12px; display: flex; align-items: center; justify-content: center; color: var(--dungeon-color); border: 1px solid #bba96955; width: 23px; height: 23px; background: #0e170bb3; }
+.dungeon-option.selected .dungeon-check { border-color: var(--dungeon-color); }
+.loadout-summary { display: flex; align-items: center; gap: 20px; }
+.expanded-fate .selection-footer { position: sticky; bottom: 0; z-index: 5; padding: 17px 0; background: #10160ff5; backdrop-filter: blur(8px); }
+.ready-boosts { display: flex; gap: 11px; color: #a9ba91; }
+.ready-boosts > span { display: flex; align-items: center; gap: 4px; font-family: var(--pixel); font-size: 13px; }
+.fate-save-note { margin-top: 22px; display: flex; justify-content: center; align-items: center; gap: 7px; color: #738165; font-size: 8px; line-height: 1.8; }
+.boost-shop { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 19px; }
+.boost-item { padding: 22px 19px 17px; border: 1px solid #8b8c5740; background: #29321c20; display: flex; flex-direction: column; }
+.boost-item-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.boost-vial { display: flex; align-items: center; justify-content: center; height: 55px; width: 46px; color: var(--boost-color); border: 2px solid color-mix(in srgb, var(--boost-color) 50%, transparent); background: linear-gradient(0deg, color-mix(in srgb, var(--boost-color) 15%, transparent) 70%, transparent 70%); position: relative; }
+.boost-vial::before { content: ''; width: 20px; height: 5px; top: -7px; position: absolute; background: #a58d5c; border: 1px solid #c4b381; }
+.boost-vial::after { content: ''; position: absolute; left: 5px; top: 6px; height: 15px; width: 2px; background: color-mix(in srgb, var(--boost-color) 50%, transparent); }
+.boost-duration { display: flex; gap: 5px; align-items: center; font-size: 7px; color: #959d80; letter-spacing: 1px; }
+.boost-item .micro-label { font-size: 5.8px; color: var(--boost-color); letter-spacing: 1.1px; }
+.boost-item h2 { font-family: var(--pixel); font-size: 27px; color: #d0c7a5; font-weight: 500; margin: 8px 0 10px; }
+.boost-item > p { font-size: 10px; color: #979f83; line-height: 1.85; flex: 1; }
+.boost-inventory { display: flex; justify-content: space-between; gap: 8px; margin: 24px 0 14px; padding-top: 13px; border-top: 1px solid var(--line); font-size: 5.5px; letter-spacing: .5px; color: #838d6f; }
+.boost-inventory strong { color: #c2c99f; font-size: 9px; margin-left: 4px; font-weight: 500; }
+.boost-inventory > span:last-child { color: var(--boost-color); }
+.boost-item > .outline-button { width: 100%; font-size: 7px; padding: 0 7px; gap: 7px; min-height: 42px; }
+.boost-activate { border: 0; background: transparent; display: flex; justify-content: center; align-items: center; gap: 7px; font-size: 6.5px; letter-spacing: .8px; color: var(--boost-color); margin-top: 14px; padding: 7px 0; }
+.boost-activate:hover:not(:disabled) { color: #ece5be; }
+.boost-activate:disabled { opacity: .35; }
+.treasure-guide { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); margin: 30px 0; padding-top: 25px; }
+.treasure-guide > div:first-child > svg { float: left; margin: 5px 14px 0 0; color: #af9f6b; }
+.treasure-guide h3 { font-family: var(--pixel); font-size: 21px; color: #b7b38e; font-weight: 400; }
+.treasure-guide p { font-size: 9px; margin-top: 5px; color: #7e8b6e; }
+.rarity-guide { display: flex; gap: 16px; }
+.rarity-guide > span { display: flex; flex-direction: column; align-items: center; font-size: 7px; line-height: 1.8; }
+.rarity-guide i { width: 6px; height: 6px; margin-bottom: 7px; transform: rotate(45deg); }
+.rarity-guide small { opacity: .55; font-size: 7px; }
+
+.dialog-close { position: absolute; top: 13px; right: 13px; z-index: 3; }
+.phantom-modal .modal-content { width: 670px; flex-direction: row; border-color: #926abc80; background: #15101d; overflow: auto; }
+.phantom-modal .modal-content::before, .phantom-modal .modal-content::after { border-color: #c399ef; }
+.phantom-unlock-art { width: 40%; min-width: 40%; position: relative; overflow: hidden; }
+.phantom-unlock-art .hero-portrait { position: absolute; inset: 0; object-fit: cover; object-position: center 35%; }
+.phantom-unlock-art::after { position: absolute; content: ''; inset: 0; background: linear-gradient(90deg, transparent 50%, #15101d), linear-gradient(0deg, #15101d 0%, transparent 15%); }
+.phantom-unlock-body { padding: 43px 33px 30px 20px; }
+.phantom-unlock-body .eyebrow { font-size: 7px; color: #b798d7; letter-spacing: 2px; }
+.phantom-unlock-body h2 { font-family: var(--pixel); font-size: 34px; font-weight: 500; color: #decbf4; line-height: 1.15; margin: 14px 0; }
+.phantom-unlock-body > p { color: #a297b2; font-size: 11px; line-height: 1.8; }
+.phantom-unlock-body form { margin-top: 23px; }
+.phantom-unlock-body form label { display: block; font-size: 7px; letter-spacing: 1.4px; color: #a58abc; margin-bottom: 10px; }
+.phantom-unlock-body input { display: block; width: 100%; height: 43px; padding: 0 13px; border: 1px solid #9670be6b; background: #20162c; color: #e1c9fb; font-size: 14px; letter-spacing: 2px; border-radius: 0; }
+.phantom-unlock-body input::placeholder { font-size: 11px; letter-spacing: 1px; color: #726081; }
+.phantom-unlock-body .phantom-button { width: 100%; margin-top: 15px; font-size: 8px; gap: 9px; }
+.phantom-unlock-body > small { display: block; color: #73677d; font-size: 7px; line-height: 1.8; margin-top: 17px; }
+.form-error { color: #e3a18e !important; font-size: 10px !important; line-height: 1.7; margin: 10px 0 !important; }
+.form-help { font-size: 10px; color: #b7a171; line-height: 1.8; margin: 13px 0; }
+.shop-dialog .modal-content { width: 490px; overflow-y: auto; }
+.shop-dialog .modal-heading { padding: 28px 29px 0; }
+.shop-dialog .modal-heading h2 { font-size: 30px; line-height: 1.2; }
+.shop-dialog .modal-heading .eyebrow { font-size: 6px; }
+.exchange-form, .purchase-body { padding: 20px 30px 29px; }
+.exchange-form > p, .purchase-body > p { font-size: 11px; color: #979f85; line-height: 1.85; }
+.exchange-rate { padding: 23px 0; margin: 14px 0 21px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.exchange-rate > span { display: flex; align-items: center; gap: 9px; color: #c7ae71; font-family: var(--pixel); font-size: 21px; white-space: nowrap; }
+.exchange-rate > span:last-child { color: #c2a4e3; }
+.exchange-rate > svg { color: #5d6a4e; }
+.exchange-form label { display: flex; justify-content: space-between; gap: 10px; font-size: 7px; color: #aba780; letter-spacing: 1.2px; }
+.exchange-form label > span { color: #78896b; font-size: 6px; }
+.exchange-input { display: flex; margin-top: 10px; height: 46px; border: 1px solid #7a7e4c80; background: #1d2618; padding-right: 12px; }
+.exchange-input input { width: 100%; min-width: 0; border: 0; padding: 0 13px; background: transparent; color: #d7c494; font-family: var(--pixel); font-size: 23px; }
+.exchange-input input::placeholder { font-family: var(--body); font-size: 11px; color: #6f8062; }
+.exchange-receive { display: flex; justify-content: space-between; align-items: center; margin: 22px 0; }
+.exchange-receive > span { font-size: 7px; color: #8c987a; letter-spacing: 1px; }
+.exchange-receive strong { display: flex; align-items: center; gap: 8px; font-family: var(--pixel); font-size: 22px; color: #c8abe7; font-weight: 400; }
+.exchange-form .gold-button { width: 100%; margin-top: 10px; }
+.purchase-portrait { height: 180px; overflow: hidden; float: left; width: 110px; margin: 0 18px 14px 0; border: 1px solid #797d4f44; }
+.purchase-body > p { min-height: 100px; }
+.purchase-cost { clear: both; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 21px; margin-top: 22px; }
+.purchase-cost > span { color: #899675; font-size: 8px; letter-spacing: 1px; }
+.purchase-cost strong { display: flex; align-items: center; gap: 7px; font-family: var(--pixel); font-size: 28px; color: #ceb0ec; font-weight: 500; }
+.purchase-balance { display: flex; justify-content: space-between; margin-top: 12px; font-size: 7px; letter-spacing: 1px; color: #818e72; }
+.purchase-body > .gold-button { width: 100%; margin-top: 24px; }
+.purchase-body > .text-button { justify-content: center; width: 100%; margin-top: 14px; font-size: 7px; }
+
+.bestiary { padding: 28px 0; }
+.bestiary-intro h2 { font-family: var(--pixel); font-size: 29px; font-weight: 400; color: #c5b994; }
+.bestiary-intro p { font-size: 10px; color: #8d987c; line-height: 1.8; margin-top: 7px; }
+.bestiary-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 27px; margin-top: 22px; }
+.bestiary-entry { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding: 20px 0; }
+.creature-portrait { width: 75px; height: 65px; image-rendering: pixelated; flex-shrink: 0; }
+.bestiary-entry h3 { font-family: var(--pixel); font-size: 21px; font-weight: 400; }
+.bestiary-entry p { font-size: 9px; color: #8c987c; line-height: 1.7; margin: 6px 0 9px; }
+.bestiary-entry span { font-size: 6px; letter-spacing: .6px; color: #697b5b; display: flex; align-items: center; gap: 6px; }
+.bestiary-entry span i { height: 2px; width: 2px; background: #8c9268; }
+.armory-collection .item-grid { max-height: 566px; overflow-y: auto; padding: 1px 5px 1px 1px; }
+.armory-collection .item-inspector { align-self: start; }
+
+.expanded-game { --game-top: 96px; --game-bottom: 112px; }
+.expanded-game .game-hud { height: var(--game-top); padding: 0 3.5%; }
+.expanded-game .player-status > .player-portrait { width: 53px; height: 62px; border: 1px solid #a28d527d; overflow: hidden; flex-shrink: 0; }
+.expanded-game .player-status > div:last-child { width: 212px; }
+.expanded-game .player-name { font-size: 21px; margin-bottom: 7px; }
+.expanded-game .player-name > span { font-size: 7px; }
+.expanded-game .health-track { height: 16px; margin-top: 0; }
+.expanded-game .health-track > span { font-size: 11px; }
+.stamina-track { height: 13px; margin-top: 4px; position: relative; border: 1px solid #85975d60; background: #26352173; padding: 1px; }
+.stamina-track > div { height: 100%; background: linear-gradient(90deg, #49663d, #849b5b); transition: width .14s linear; }
+.stamina-track > span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 4px; font-family: var(--pixel); font-size: 9px; color: #dce3bc; text-shadow: 1px 1px #20351c; }
+.stamina-track.infinite { border-color: #a4c29b7d; }
+.stamina-track.infinite > div { background: linear-gradient(90deg, #49614b, #668e76); }
+.phantom-game .player-portrait { border-color: #aa7bd198 !important; }
+.phantom-game .player-name, .phantom-game .player-name > span { color: #cdb0e7; }
+.phantom-game .health-track > div { background: linear-gradient(90deg, #5f3a83, #ae75c6); }
+.phantom-game .stamina-track > div { background: linear-gradient(90deg, #49365f, #7b669f); }
+.expanded-game .floor-status strong { font-size: 29px; }
+.expanded-game .floor-status .micro-label { color: #939878; font-size: 7px; }
+.expanded-game .run-counters { gap: 20px; }
+.expanded-game .run-counters > span { font-size: 23px; }
+.expanded-game .run-counters > .run-shards, .expanded-game .run-shards svg { color: #bba0d5; }
+.expanded-game .run-counters > .icon-button { width: 39px; height: 40px; }
+.expanded-game .game-bottom-bar { height: var(--game-bottom); min-height: var(--game-bottom); padding: 17px 3.5%; }
+.expanded-game .game-viewport { max-width: calc((100svh - var(--game-top) - var(--game-bottom)) * 1.77778); }
+.expanded-game .movement-keys kbd { min-width: 23px; height: 23px; font-size: 8px; }
+.expanded-game .game-movement-guide > span { font-size: 9px; line-height: 1.8; }
+.expanded-game .game-movement-guide small { font-size: 6px; line-height: 1.7; display: block; margin-top: 4px; }
+.expanded-game .ability-controls { gap: 22px; }
+.expanded-game .ability-control { gap: 12px; }
+.expanded-game .ability-icon { width: 54px; height: 54px; }
+.expanded-game .ability-icon kbd { min-width: 22px; min-height: 20px; font-size: 9px; bottom: -8px; padding: 3px 5px; }
+.expanded-game .ability-control > span { font-size: 11px; }
+.expanded-game .ability-control small { font-size: 6px; line-height: 1.5; letter-spacing: .6px; }
+.expanded-game .ability-icon > strong { font-size: 29px; }
+.expanded-game .interact-control > span { display: block; }
+.expanded-game .run-time { font-size: 23px; }
+.sprint-control { display: none; }
+.phantom-game .game-movement-guide { display: none; }
+.phantom-game .ability-controls { gap: 20px; }
+.phantom-game .ability-control > span { font-size: 10px; }
+.phantom-game .ability-icon { border-color: #9c78c366; background: #3d294122; }
+.phantom-game .ability-icon > svg { color: #b798d7; }
+.phantom-game .ability-control.ready .ability-icon { border-color: #af87d591; box-shadow: inset 0 0 17px #9d59d21a; }
+.phantom-game .ability-control.ready small { color: #b998d8; }
+.phantom-game .run-time { display: none; }
+.phantom-game .ability-controls { margin: 0 auto; }
+.run-buffs { position: absolute; top: 15px; left: 15px; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.run-buffs > div { display: flex; align-items: center; gap: 7px; color: #a8bc86; font-size: 8px; text-shadow: 1px 1px 4px #000; }
+.run-buffs > div > strong { font-family: var(--pixel); font-size: 13px; font-weight: 400; }
+.run-buffs .hero-status-effect { color: #d2b0f0; }
+.loot-notification { position: absolute; left: 17px; bottom: 70px; display: flex; align-items: center; gap: 13px; background: #12170eee; border: 1px solid color-mix(in srgb, var(--loot-color) 40%, transparent); border-left: 3px solid var(--loot-color); padding: 13px 17px; max-width: min(390px, 65%); color: var(--loot-color); pointer-events: none; animation: loot-arrive .4s both; }
+.loot-rarity { font-size: 7px; letter-spacing: 1.7px; }
+.loot-values { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+.loot-values > span { display: flex; align-items: center; gap: 5px; font-family: var(--pixel); font-size: 22px; color: #e5d4a4; }
+.loot-values > span:nth-child(2) { color: #c6a5e3; }
+.loot-values > small { font-size: 6px; letter-spacing: 1px; color: #8da270; }
+.loot-notification p { font-size: 8px; color: #a1a68c; line-height: 1.7; margin-top: 5px; }
+.run-results-meta { display: flex; justify-content: center; gap: 22px; color: #a89f7b; margin: 1px 0 20px; }
+.run-results-meta > span { display: flex; align-items: center; gap: 7px; font-size: 7px; letter-spacing: .5px; }
+.expanded-game .game-notice { font-size: clamp(8px, .85vw, 12px); }
+.expanded-game .interaction-hint { font-size: 9px; }
+
+@keyframes phantom-breathe { 0%, 100% { opacity: .4; transform: scale(.98); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes loot-arrive { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1250px) {
+  .expanded-fate .character-card-label h2 { font-size: 24px; }
+  .expanded-fate .expanded-roster .character-art { height: 220px; }
+  .expanded-fate .shop-roster .character-art { height: 220px; }
+  .expanded-fate .shop-roster .character-card-label h2 { font-size: 21px; }
+  .expanded-fate .character-role { font-size: 6px; }
+  .expanded-fate .shop-roster .character-role { font-size: 5.5px; }
+  .expanded-game .game-movement-guide { display: none; }
+  .expanded-game .game-bottom-bar { padding-left: 4%; padding-right: 4%; }
+  .expanded-game .ability-controls { gap: 24px; }
+  .phantom-game .ability-control { flex-direction: column; gap: 12px; }
+  .phantom-game .ability-control > span { font-size: 9px; text-align: center; }
+  .phantom-game .ability-control small { font-size: 5px; margin-top: 4px; }
+  .phantom-game .ability-controls { gap: 33px; }
+  .boost-item h2 { font-size: 24px; }
+  .dungeon-option h3 { font-size: 22px; }
+}
+
+@media (max-width: 1000px) {
+  .fate-toolbar { flex-wrap: wrap-reverse; gap: 8px; }
+  .wallet { justify-content: flex-end; width: 100%; }
+  .fate-toolbar .panel-tabs { flex: 1; }
+  .expanded-fate .expanded-roster { gap: 12px; }
+  .expanded-fate .character-card-label { padding-left: 13px; padding-right: 13px; }
+  .expanded-fate .character-card-label h2 { font-size: 22px; }
+  .expanded-fate .expanded-roster .character-art { height: 196px; }
+  .expanded-fate .character-traits { gap: 8px; font-size: 7px; }
+  .hero-ownership { font-size: 5.5px; letter-spacing: .7px; }
+  .expanded-fate .shop-roster { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .boost-shop { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .boost-item { padding: 25px 24px 17px; }
+  .boost-item h2 { font-size: 28px; }
+  .boost-item .micro-label { font-size: 7px; }
+  .boost-item > .outline-button { font-size: 8px; }
+  .boost-inventory { font-size: 7px; }
+  .boost-activate { font-size: 7px; }
+  .treasure-guide { flex-direction: column; align-items: flex-start; gap: 25px; }
+  .rarity-guide { gap: 26px; }
+  .bestiary-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .expanded-game .run-counters { gap: 14px; }
+  .expanded-game .run-counters > span { font-size: 20px; }
+  .expanded-game .player-status > div:last-child { width: 180px; }
+  .expanded-game .player-name { font-size: 19px; }
+  .expanded-game .ability-control > span { font-size: 10px; }
+  .expanded-game .ability-controls { gap: 20px; }
+  .expanded-game .run-time { display: none; }
+  .expanded-game .ability-controls { flex: 1; justify-content: space-around; }
+  .dungeon-option { padding: 18px 14px; }
+  .dungeon-option h3 { font-size: 21px; }
+}
+
+@media (max-width: 800px) {
+  .expanded-fate .expanded-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+  .expanded-fate .expanded-roster .character-art { height: 235px; }
+  .expanded-fate .character-card-label h2 { font-size: 27px; min-height: 0; }
+  .expanded-fate .character-role { font-size: 7px; }
+  .expanded-fate .character-traits { font-size: 8px; gap: 19px; }
+  .expanded-fate .character-card-label { padding: 5px 18px 18px; }
+  .hero-ownership { font-size: 6.5px; letter-spacing: 1px; }
+  .expanded-fate .shop-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .expanded-fate .shop-roster .character-art { height: 220px; }
+  .expanded-fate .shop-roster .character-card-label { padding: 4px 13px 15px; }
+  .expanded-fate .shop-roster .character-card-label h2 { min-height: 49px; font-size: 22px; }
+  .expanded-fate .shop-roster .character-role { font-size: 5.5px; }
+  .expanded-fate .shop-roster .character-traits { font-size: 6.5px; gap: 9px; }
+  .hero-attributes { min-width: 192px; }
+  .hero-attributes i { width: 17px; }
+  .expanded-fate .character-skills { gap: 20px; }
+  .expanded-fate .skill-description h3 { font-size: 11px; }
+  .expanded-fate .skill-description p { font-size: 9px; }
+  .dungeon-options { grid-template-columns: 1fr; gap: 10px; }
+  .dungeon-option { min-height: 120px; padding: 20px; }
+  .dungeon-option > img { object-position: center 53%; }
+  .dungeon-option p { max-width: 75%; }
+  .dungeon-option h3 { font-size: 25px; }
+  .dungeon-option > div > span { font-size: 6px; }
+  .loadout-summary { flex-direction: column; align-items: flex-start; gap: 13px; }
+  .fate-save-note { align-items: flex-start; text-align: center; }
+  .fate-save-note svg { margin-top: 2px; }
+  .expanded-game { --game-top: 90px; --game-bottom: 116px; }
+  .expanded-game .player-status > div:last-child { width: 155px; }
+  .expanded-game .player-status > .player-portrait { width: 42px; height: 56px; }
+  .expanded-game .player-name { font-size: 17px; }
+  .expanded-game .floor-status strong { font-size: 25px; }
+  .expanded-game .floor-status .micro-label { display: none; }
+  .expanded-game .ability-control { flex-direction: column; align-items: center; gap: 13px; }
+  .expanded-game .ability-control > span { font-size: 9px; text-align: center; }
+  .expanded-game .ability-control small { display: none; }
+  .expanded-game .ability-controls { justify-content: space-around; gap: 14px; }
+  .expanded-game .run-counters { gap: 10px; }
+  .expanded-game .run-counters > span { font-size: 19px; }
+  .expanded-game .run-counters svg { width: 15px; }
+  .expanded-game .game-notice { font-size: 8px; }
+}
+
+@media (max-width: 600px) {
+  .expanded-fate { padding-top: 22px; width: 89%; }
+  .expanded-fate .screen-heading h1 { font-size: 38px; }
+  .expanded-fate .screen-heading .eyebrow { font-size: 5.5px; letter-spacing: 1.5px; }
+  .expanded-fate .back-link { position: static; margin-bottom: 24px; }
+  .fate-toolbar { margin-bottom: 22px; }
+  .fate-toolbar .panel-tabs { gap: 0; justify-content: space-between; width: 100%; }
+  .fate-toolbar .panel-tabs > button { font-size: 7px; gap: 6px; letter-spacing: .8px; padding: 17px 2px 14px; }
+  .fate-toolbar .panel-tabs > button svg { width: 14px; }
+  .wallet { gap: 17px; justify-content: flex-start; }
+  .wallet strong { font-size: 24px; }
+  .wallet > span { gap: 5px; }
+  .wallet small { font-size: 5px; letter-spacing: .6px; }
+  .exchange-button { font-size: 6px; gap: 5px; padding: 9px; margin-left: auto; }
+  .exchange-button svg { width: 13px; }
+  .expanded-fate .expanded-roster { display: grid; overflow: visible; padding: 0; gap: 12px; }
+  .expanded-fate .character-card { min-width: 0; max-width: none; }
+  .expanded-fate .expanded-roster .character-art { height: 173px; }
+  .expanded-fate .character-card-label { padding: 3px 12px 13px; }
+  .expanded-fate .character-card-label h2 { font-size: 23px; min-height: 56px; display: flex; align-items: center; line-height: 1.15; margin: 3px 0 8px; }
+  .expanded-fate .character-role { font-size: 5.4px; letter-spacing: .6px; line-height: 1.5; min-height: 16px; }
+  .expanded-fate .character-traits { font-size: 6.5px; gap: 8px; flex-wrap: wrap; }
+  .expanded-fate .character-traits svg { width: 10px; }
+  .expanded-fate .character-number { left: 12px; top: 12px; font-size: 15px; }
+  .expanded-fate .selection-mark { width: 17px; height: 17px; top: 12px; right: 12px; }
+  .hero-ownership { font-size: 5px; gap: 5px; letter-spacing: .5px; padding-top: 10px; margin-top: 11px; }
+  .hero-ownership svg { width: 10px; }
+  .expanded-fate .shop-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .expanded-fate .shop-roster .character-art { height: 196px; }
+  .expanded-fate .shop-roster .character-card-label h2 { font-size: 22px; min-height: 51px; }
+  .expanded-fate .shop-roster .character-card-label { padding: 3px 11px 13px; }
+  .shop-intro > span { font-size: 24px; }
+  .shop-intro > p { font-size: 9px; }
+  .hero-detail { margin-top: 25px; }
+  .hero-detail-summary { align-items: flex-start; flex-direction: column; gap: 19px; padding-top: 22px; }
+  .hero-detail-summary h2 { font-size: 29px; }
+  .hero-detail-summary p { font-size: 10px; }
+  .hero-attributes { width: 100%; min-width: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; }
+  .hero-attributes > div { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .hero-attributes > div > span { font-size: 6px; }
+  .hero-attributes > div > div { gap: 3px; }
+  .hero-attributes i { width: 14px; height: 4px; }
+  .hero-attributes small { font-size: 9px; }
+  .expanded-fate .character-skills { gap: 20px; margin: 24px 0; }
+  .expanded-fate .skill-description p { font-size: 10px; }
+  .expanded-fate .skill-description h3 { font-size: 12px; }
+  .phantom-extra-skills { grid-template-columns: 1fr; gap: 20px; }
+  .phantom-extra-skills p { font-size: 10px; }
+  .hero-purchase-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .hero-purchase-row > span { font-size: 9px; }
+  .hero-purchase-row > button { min-height: 46px; font-size: 8px; }
+  .section-subheading .micro-label { font-size: 6px; }
+  .section-subheading > span:last-child { font-size: 5px; letter-spacing: .7px; }
+  .dungeon-option { min-height: 137px; padding: 19px 16px; }
+  .dungeon-option p { max-width: 92%; font-size: 9px; }
+  .dungeon-option h3 { font-size: 24px; }
+  .expanded-fate .selection-footer { gap: 14px; padding: 14px 0; }
+  .loadout-summary { flex-direction: row; justify-content: space-between; width: 100%; gap: 12px; align-items: center; }
+  .ready-boosts { flex-wrap: wrap; gap: 9px; justify-content: flex-end; max-width: 116px; }
+  .ready-boosts > span { font-size: 11px; }
+  .fate-save-note { font-size: 7px; margin-top: 22px; }
+  .boost-shop { gap: 13px; }
+  .boost-item { padding: 22px 12px 13px; }
+  .boost-vial { width: 37px; height: 44px; }
+  .boost-vial svg { width: 23px; }
+  .boost-duration { font-size: 5.5px; gap: 4px; }
+  .boost-item h2 { font-size: 23px; min-height: 52px; display: flex; align-items: center; margin-top: 5px; }
+  .boost-item .micro-label { font-size: 5px; letter-spacing: .6px; }
+  .boost-item > p { font-size: 9px; line-height: 1.75; }
+  .boost-inventory { font-size: 5px; gap: 5px; flex-direction: column; margin-top: 20px; }
+  .boost-item > .outline-button { font-size: 6px; padding: 0 5px; gap: 4px; letter-spacing: .35px; }
+  .boost-item > .outline-button svg { width: 10px; }
+  .boost-activate { font-size: 5.5px; gap: 4px; letter-spacing: .2px; line-height: 1.7; }
+  .boost-activate svg { width: 10px; }
+  .treasure-guide h3 { font-size: 21px; }
+  .treasure-guide p { font-size: 8px; }
+  .rarity-guide { gap: 0; width: 100%; justify-content: space-between; }
+  .rarity-guide > span { font-size: 6px; }
+  .shop-notice { font-size: 9px; padding: 10px; }
+  .phantom-modal .modal-content { width: 390px; flex-direction: column; }
+  .phantom-unlock-art { height: 160px; min-height: 160px; width: 100%; }
+  .phantom-unlock-art .hero-portrait { object-position: center 22%; }
+  .phantom-unlock-art::after { background: linear-gradient(0deg, #15101d, transparent 80%); }
+  .phantom-unlock-body { padding: 0 25px 27px; }
+  .phantom-unlock-body h2 { font-size: 31px; margin: 10px 0 13px; }
+  .phantom-unlock-body > p { font-size: 10px; }
+  .phantom-unlock-body form { margin-top: 20px; }
+  .phantom-unlock-body input { height: 47px; }
+  .phantom-unlock-body .phantom-button { min-height: 48px; }
+  .shop-dialog .modal-heading { padding: 25px 23px 0; }
+  .shop-dialog .modal-heading h2 { font-size: 29px; }
+  .exchange-form, .purchase-body { padding: 20px 24px 27px; }
+  .exchange-form > p, .purchase-body > p { font-size: 10px; }
+  .exchange-rate { gap: 10px; }
+  .exchange-rate > span { font-size: 18px; gap: 7px; }
+  .exchange-rate > span svg { width: 18px; }
+  .exchange-rate > svg { width: 16px; }
+  .exchange-form label { font-size: 6px; }
+  .exchange-receive strong { font-size: 21px; }
+  .exchange-receive > span { font-size: 6px; }
+  .purchase-portrait { width: 99px; height: 151px; margin-right: 14px; }
+  .purchase-cost strong { font-size: 24px; }
+  .bestiary-list { grid-template-columns: 1fr; gap: 0; }
+  .bestiary-entry { padding: 17px 0; gap: 13px; }
+  .creature-portrait { width: 86px; height: 70px; }
+  .bestiary-entry p { font-size: 10px; }
+  .bestiary-entry h3 { font-size: 24px; }
+  .bestiary-entry span { font-size: 7px; }
+  .armory-screen .panel-tabs { gap: 11px; justify-content: space-between; }
+  .armory-screen .panel-tabs > button { font-size: 5px; gap: 4px; }
+  .armory-screen .panel-tabs > button svg { width: 11px; }
+  .armory-screen .tab-count { display: none; }
+  .expanded-game { --game-top: 84px; --game-bottom: 104px; --game-touch: 126px; min-height: 420px; }
+  .expanded-game .game-hud { padding: 0 12px; gap: 7px; }
+  .expanded-game .player-status { gap: 7px; }
+  .expanded-game .player-status > .player-portrait { width: 31px; height: 45px; }
+  .expanded-game .player-status > div:last-child { width: 121px; }
+  .expanded-game .player-name { font-size: 15px; margin-bottom: 6px; }
+  .expanded-game .health-track { height: 13px; }
+  .expanded-game .health-track > span { font-size: 9px; }
+  .stamina-track { height: 11px; margin-top: 3px; }
+  .stamina-track > span { font-size: 7px; gap: 2px; }
+  .stamina-track > span svg { width: 7px; }
+  .expanded-game .floor-status strong { font-size: 18px; letter-spacing: .2px; }
+  .expanded-game .run-counters { gap: 8px; }
+  .expanded-game .run-counters > span { font-size: 16px; gap: 3px; }
+  .expanded-game .run-counters > span svg { width: 12px; }
+  .expanded-game .run-counters > .run-shards { display: none; }
+  .expanded-game .run-counters > .icon-button { width: 34px; height: 36px; }
+  .expanded-game .ability-icon { width: 48px; height: 48px; }
+  .expanded-game .ability-icon > svg { width: 25px; }
+  .expanded-game .ability-icon kbd { font-size: 8px; min-height: 18px; min-width: 21px; }
+  .expanded-game .ability-controls { gap: 12px; flex: 1; justify-content: space-between; }
+  .expanded-game .ability-control { gap: 13px; }
+  .expanded-game .ability-control > span { font-size: 7.5px; }
+  .expanded-game .game-bottom-bar { padding: 12px 16px 16px; height: var(--game-bottom); }
+  .expanded-game .sprint-control { display: flex; }
+  .expanded-game .sprint-control .ability-icon { width: 38px; }
+  .expanded-game .game-viewport { max-width: calc((100svh - var(--game-top) - var(--game-bottom) - var(--game-touch)) * 1.77778); }
+  .expanded-game .touch-controls { height: var(--game-touch); padding: 9px 23px 17px; }
+  .expanded-game .touch-dpad { grid-template-columns: repeat(3, 46px); grid-template-rows: 44px 44px; }
+  .expanded-game .touch-controls > p { font-size: 8px; max-width: 114px; }
+  .expanded-game .touch-controls > .icon-button { width: 40px; height: 43px; }
+  .phantom-game { --game-bottom: 128px; }
+  .phantom-game .ability-controls { overflow-x: auto; justify-content: flex-start; gap: 17px; padding: 7px 2px 10px; scrollbar-width: thin; }
+  .phantom-game .ability-control { flex-shrink: 0; min-width: 58px; }
+  .phantom-game .ability-control > span { max-width: 75px; white-space: normal; font-size: 8px; line-height: 1.5; }
+  .phantom-game .ability-control:nth-child(3), .phantom-game .ability-control:nth-child(4) { min-width: 70px; }
+  .run-buffs { top: 8px; left: 8px; gap: 5px; }
+  .run-buffs > div { font-size: 6px; gap: 4px; }
+  .run-buffs > div svg { width: 10px; }
+  .run-buffs > div > span { display: none; }
+  .run-buffs > div > strong { font-size: 11px; }
+  .loot-notification { left: 8px; bottom: 48px; gap: 9px; padding: 9px 11px; max-width: 75%; }
+  .loot-notification > svg { width: 19px; }
+  .loot-rarity { font-size: 5px; letter-spacing: 1px; }
+  .loot-values { margin-top: 4px; gap: 10px; }
+  .loot-values > span { font-size: 16px; gap: 4px; }
+  .loot-values svg { width: 10px; }
+  .loot-values small { font-size: 5px; }
+  .loot-notification p { font-size: 6px; line-height: 1.6; }
+  .expanded-game .game-notice { font-size: 6px; }
+  .expanded-game .interaction-hint { font-size: 6px; }
+  .run-results-meta { gap: 17px; }
+  .run-results-meta > span { font-size: 6px; gap: 5px; }
+}
+
+@media (max-height: 600px) and (min-width: 601px) {
+  .expanded-game { --game-top: 74px; --game-bottom: 92px; min-height: 0; }
+  .expanded-game .game-hud { height: var(--game-top); }
+  .expanded-game .game-bottom-bar { height: var(--game-bottom); min-height: var(--game-bottom); padding: 10px 3%; }
+  .expanded-game .player-status > .player-portrait { height: 49px; width: 38px; }
+  .expanded-game .player-name { font-size: 16px; margin-bottom: 4px; }
+  .expanded-game .health-track { height: 12px; }
+  .stamina-track { height: 10px; }
+  .stamina-track > span { font-size: 7px; }
+  .expanded-game .ability-icon { width: 45px; height: 45px; }
+  .expanded-game .ability-control > span { font-size: 8px; }
+  .expanded-game .ability-control small { display: none; }
+  .phantom-unlock-body { padding: 28px 27px 25px 19px; }
+  .phantom-unlock-body h2 { font-size: 29px; }
+  .phantom-unlock-body > p { font-size: 10px; }
+  .phantom-unlock-body form { margin-top: 15px; }
+  .phantom-unlock-body > small { font-size: 6px; }
+}
+
+@media (pointer: coarse) and (min-width: 601px) {
+  .expanded-game .sprint-control { display: flex; }
+  .expanded-game .game-viewport { max-width: calc((100svh - var(--game-top) - var(--game-bottom)) * 1.77778); }
+  .expanded-game .touch-controls { bottom: calc(var(--game-bottom) + 12px); }
+  .phantom-game .ability-controls { overflow-x: auto; justify-content: flex-start; gap: 26px; padding: 3px 4px 9px; }
+  .phantom-game .ability-control { flex-shrink: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phantom-aura { animation: none; }
+  .loot-notification { animation: none; }
+}

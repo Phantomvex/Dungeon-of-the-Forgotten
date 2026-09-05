@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" shape-rendering="crispEdges">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#070e1c"/><stop offset="1" stop-color="#1b3747"/></linearGradient><pattern id="brick" width="64" height="32" patternUnits="userSpaceOnUse"><path d="M0 0h64v32H0z" fill="#213441"/><path d="M0 0h64M0 31h64M32 0v16M0 16h64M16 16v16" stroke="#101e2b" stroke-width="2"/></pattern><symbol id="crystal" viewBox="0 0 60 160"><path d="M25 0 45 42 53 130 30 159 8 139 4 55z" fill="#5c9db3"/><path d="m25 0 6 60-1 99-22-20-4-84z" fill="#97c8d4"/><path d="m25 0 20 42 8 88-22-70z" fill="#315f83"/><path d="m25 8 2 50-15 73-4-75z" fill="#c4e4e8"/></symbol></defs>
+<path fill="url(#bg)" d="M0 0h640v320H0z"/>
+<path d="M0 0h190v236H0zm450 0h190v236H450z" fill="url(#brick)"/><path d="M178 250V77l64-54h154l66 54v173h-28V87l-48-36H252l-46 36v163z" fill="#314957"/><path d="M196 228V85l54-43h141l53 43v144h-15V95l-42-32H255l-44 32v134z" fill="#4b6878"/>
+<path d="m239 40 11 37 10-35 12 51 11-50 13 33 10-34 10 61 12-62 17 39 10-41 9 44 16-46" fill="#7cabb9"/><path d="M252 237V106l30-30h79l32 30v132h-16V117l-23-22h-66l-20 22v126" fill="#213549"/>
+<path d="M0 257h178l48-17h187l45 17h182v63H0z" fill="#2b4654"/><path d="m0 296 97-19 56 17 62-34 62 11 36-24 25 1-36 34 58 38H0z" fill="#476572"/><path d="m355 255 53 14 35 31 95-18 102 15v23H381l-60-32z" fill="#37505e"/><path d="m305 254 34 5-30 25 44 36h-64l-21-21 22-17-34-6z" fill="#091624"/>
+<use href="#crystal" x="34" y="69" width="69" height="191"/><use href="#crystal" x="89" y="155" width="42" height="120"/><use href="#crystal" x="514" y="110" width="62" height="169"/><use href="#crystal" x="570" y="183" width="34" height="97"/>
+<path d="M152 47h12v169h-12zm317 6h10v167h-10" fill="#486677"/><path d="M146 54h25v8h-25zm315 7h25v8h-25zM132 219h53v13h-53zm315 0h56v13h-56" fill="#7b9eab"/>
+<g fill="#d5e6e5"><path d="M49 16h3v3h-3zm140 13h3v2h-3zm86 10h2v2h-2zm62 122h2v3h-2zm-92 59h3v2h-3zm211-176h3v3h-3zm48 117h2v3h-2zm92-46h3v3h-3zM362 217h3v2h-3zm-315 81h8v2h-8zm447-7h6v2h-6z"/></g>
+</svg>

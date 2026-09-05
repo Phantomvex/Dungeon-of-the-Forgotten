@@ -1,0 +1,295 @@
+.dungeon-background { background-image: var(--gate-art); }
+.preview-art { background-image: linear-gradient(90deg, #10140fee, #10140f66), var(--gate-art); }
+.menu-cast { position: fixed; inset: 0; width: 100%; height: 100svh; z-index: 1; pointer-events: none; image-rendering: pixelated; }
+.menu-secondary-actions { display: flex; align-items: center; justify-content: center; gap: 28px; margin: 22px auto 0; width: 100%; }
+.menu-secondary-actions button { display: flex; align-items: center; gap: 8px; background: none; border: 0; padding: 6px 0; color: #ad9e78; letter-spacing: 1.1px; font-size: 10px; }
+.menu-secondary-actions button:hover { color: #e4cca0; }
+.menu-bottom-ornament { margin-top: 18px; }
+.main-menu { min-height: 630px; }
+.expanded-fate { width: min(1230px, 91%); }
+.expanded-fate .screen-heading > p { font-size: 13px; }
+.expanded-fate .screen-heading .eyebrow { font-size: 10px; }
+.fate-toolbar .panel-tabs { gap: 27px; }
+.fate-toolbar .panel-tabs > button { font-size: 12px; padding: 21px 4px; letter-spacing: 1px; }
+.fate-toolbar .panel-tabs svg { width: 20px; height: 20px; }
+.fate-toolbar .tab-count { font-size: 10px; }
+.wallet strong { font-size: 28px; }
+.wallet small { font-size: 8px; }
+.exchange-button { font-size: 9px; min-height: 36px; padding: 8px 13px; }
+.shop-intro > span { font-size: 30px; }
+.shop-intro > p { font-size: 13px; line-height: 1.8; max-width: 880px; }
+.expanded-fate .shop-roster { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.expanded-fate .character-card-label h2 { font-size: 29px; }
+.expanded-fate .shop-roster .character-card-label h2 { font-size: 26px; min-height: 53px; }
+.expanded-fate .character-role, .expanded-fate .shop-roster .character-role { font-size: 9px; line-height: 1.7; letter-spacing: .8px; }
+.expanded-fate .character-traits, .expanded-fate .shop-roster .character-traits { font-size: 10px; }
+.expanded-fate .hero-ownership, .expanded-fate .shop-roster .hero-ownership { font-size: 9px; letter-spacing: .65px; padding-top: 13px; }
+.expanded-fate .character-art > canvas { object-fit: cover; object-position: center 18%; }
+.expanded-fate .shop-roster .character-art { height: 250px; }
+.expanded-fate .hero-detail-summary > div > p { font-size: 12px; line-height: 1.9; }
+.hero-passive-summary > span { font-size: 12px; }
+.hero-passive-summary strong { font-size: 13px; }
+.micro-label { font-size: 9px; letter-spacing: 1.15px; }
+.mastery-level .micro-label { font-size: 9px; }
+.mastery-level h3 { font-size: 28px; }
+.mastery-level p { font-size: 12px; }
+.xp-only-label { display: flex; align-items: center; gap: 9px; color: #a7ba8a; font-size: 10px; letter-spacing: 1px; }
+.mastery-xp-caption, .mastery-xp-caption > span:last-child { font-size: 9px; }
+.mastery-abilities > button { min-height: 159px; }
+.ability-unlock-level { font-size: 9px; }
+.mastery-abilities > button > strong { font-size: 22px; }
+.mastery-abilities > button > small { font-size: 8px; }
+.mastery-ability-detail h4 { font-size: 15px; }
+.mastery-ability-detail h4 > span { font-size: 9px; }
+.mastery-ability-detail p { font-size: 12px; }
+.ability-detail-meta > span { font-size: 10px; }
+.hero-resource-note p { font-size: 12px; }
+.hero-resource-note > div { font-size: 9px; }
+.hero-resource-note strong { font-size: 23px; }
+.attribute-heading > span:last-child { font-size: 10px; }
+.attribute-upgrades h4 { font-size: 13px; }
+.attribute-upgrades h4 small { font-size: 9px; }
+.attribute-upgrades p { font-size: 11px; }
+.attribute-upgrades button { width: 38px; height: 38px; }
+.progression-explainer { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1px solid var(--line); margin-top: 22px; padding-top: 18px; }
+.progression-explainer p { font-size: 12px; color: #87947b; line-height: 1.9; }
+.progression-explainer strong { color: #c0b58f; font-weight: 500; }
+.dungeon-artwork { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; filter: brightness(.75) saturate(.8); transition: filter .3s; }
+.dungeon-option:hover .dungeon-artwork, .dungeon-option.selected .dungeon-artwork { filter: brightness(.95) saturate(1); }
+.campaign-picker .dungeon-option { min-height: 205px; }
+.campaign-picker .section-subheading > span:last-child { font-size: 9px; }
+.campaign-picker .dungeon-option > div > span { font-size: 9px; line-height: 1.6; }
+.campaign-picker .dungeon-option h3 { font-size: 28px; }
+.campaign-picker .dungeon-option p { font-size: 12px; line-height: 1.75; }
+.campaign-rule { color: #9d9e83; font-size: 12px; margin: 2px 0 21px; line-height: 1.8; }
+.biome-locked .dungeon-artwork { filter: grayscale(.7) brightness(.45); }
+.biome-locked:hover .dungeon-artwork { filter: grayscale(.6) brightness(.55); }
+.biome-locked .dungeon-option-shade { background: linear-gradient(180deg, #0e120b6b, #0c120de8); }
+.campaign-picker .biome-locked h3 { color: #898e7c; }
+.campaign-picker .biome-locked > div > span { color: #a08b6a; }
+.campaign-picker .biome-locked p { color: #948d77; }
+.campaign-lock-message { display: flex; gap: 8px; color: #c9a57d; font-size: 12px; margin-top: 14px; line-height: 1.6; }
+.fate-save-note { font-size: 10px; }
+.equipped-artifact p { font-size: 12px; }
+.expanded-fate .begin-button { font-size: 11px; }
+.boost-shop { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.boost-item .micro-label { font-size: 9px; }
+.boost-item > p { font-size: 12px; }
+.boost-item > .outline-button { font-size: 10px; }
+.boost-inventory, .boost-activate { font-size: 9px; }
+.boost-duration { font-size: 9px; }
+.panel-tabs > button { font-size: 10px; }
+.armory-item p { font-size: 10px; }
+.armory-item .micro-label { font-size: 8px; }
+.item-inspector > p { font-size: 13px; }
+.item-effect { font-size: 11px; }
+.bestiary-entry p { font-size: 11px; }
+.bestiary-entry span { font-size: 8px; }
+.setting-row h3 { font-size: 14px; }
+.setting-row p, .settings-note, .binding-row { font-size: 11px; }
+.keybinding { font-size: 11px; }
+.compact-game .game-stage { flex: 1; min-height: 0; width: 100%; }
+.compact-game .game-stage .game-viewport { width: 100%; height: 100%; max-width: none; aspect-ratio: auto; }
+.compact-game .dungeon-canvas { width: 100%; height: 100%; }
+.keyboard-device .touch-controls { display: none !important; }
+.compact-game .game-notice { font-size: 11px; }
+.compact-game .interaction-hint { font-size: 10px; }
+.compact-game .combat-focus-detail > strong { font-size: 10px; }
+.compact-game .combat-focus-detail > span { font-size: 8px; }
+.compact-game .combat-slot > span > strong { font-size: 9px; }
+.party-game-status { position: absolute; bottom: 10px; left: 15px; display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-left: 2px solid #92c6ad; background: #111a14bf; color: #b9d1b9; font-size: 10px; pointer-events: none; }
+.party-game-status > strong { font-family: var(--pixel); font-size: 15px; font-weight: 400; }
+.party-game-status > small { font-size: 7px; color: #849b76; }
+.shared-pause-note { position: absolute; left: 15%; top: 48%; width: 70%; padding: 18px; display: flex; align-items: center; justify-content: center; gap: 12px; color: #d9cca8; text-align: center; font-size: 13px; line-height: 1.8; background: #131a0de8; border: 1px solid #99824e74; }
+.downed-note { color: #d9a994; border-color: #a976596c; }
+
+.cheats-body { padding: 20px 29px 27px; overflow-y: auto; }
+.cheat-lock-emblem { display: flex; justify-content: center; color: #c7aa76; margin: 0 0 22px; }
+.cheats-body > p { font-size: 12px; line-height: 1.8; color: #9d9f86; }
+.cheat-wallet { display: flex; align-items: center; gap: 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 17px 0; margin: 19px 0; }
+.cheat-wallet > span { display: flex; align-items: center; gap: 8px; font-family: var(--pixel); font-size: 19px; color: #cdb88b; }
+.cheat-wallet > span:last-child { color: #baa0d9; }
+.cheats-body label { display: block; font-size: 10px; letter-spacing: 1px; color: #b0a277; margin: 17px 0 8px; }
+.cheats-body input, .cheats-body select { display: block; width: 100%; height: 43px; padding: 8px 13px; color: #d5c79f; background: #1b2416; border: 1px solid #9b8e5166; border-radius: 0; font-size: 13px; }
+.cheats-body .gold-button { width: 100%; margin-top: 22px; font-size: 10px; }
+.cheats-body > small { display: block; color: #7c8a6d; font-size: 10px; line-height: 1.8; margin-top: 18px; }
+.cheat-message { padding: 13px; margin-top: 15px; border-left: 2px solid #95b477; background: #8197550d; color: #bacc99 !important; }
+.party-screen { width: min(1040px, 88%); padding-top: 33px; padding-bottom: 37px; }
+.party-screen .screen-heading p { font-size: 13px; }
+.party-screen .eyebrow { font-size: 10px; }
+.party-connection-note { display: flex; align-items: flex-start; gap: 13px; padding: 17px 0 22px; border-bottom: 1px solid var(--line); margin-bottom: 29px; }
+.party-connection-note svg { color: #b8a773; margin-top: 4px; }
+.party-connection-note p { font-size: 12px; color: #929d81; line-height: 1.9; }
+.party-connection-note strong { color: #c7ba94; font-weight: 500; }
+.party-setup { display: grid; grid-template-columns: 290px 1fr; gap: 45px; }
+.party-selected-hero { width: 100%; height: 295px; margin: 15px 0 19px; overflow: hidden; border: 1px solid #7d815051; background: #172018; }
+.party-selected-hero canvas { object-fit: cover; object-position: top; }
+.party-screen label { display: block; color: #a99d79; font-size: 10px; letter-spacing: 1.3px; margin: 19px 0 9px; }
+.party-screen input, .party-screen select { width: 100%; height: 45px; background: #182212; border: 1px solid #8b815252; color: #d2c59f; padding: 8px 13px; border-radius: 0; font-size: 13px; }
+.party-screen input:disabled, .party-screen select:disabled { opacity: .65; }
+.party-room-panel { border-left: 1px solid var(--line); padding-left: 35px; }
+.party-room-panel > h2 { font-family: var(--pixel); font-size: 34px; font-weight: 500; color: #d8c69d; }
+.party-room-panel > p { font-size: 12px; line-height: 1.85; color: #8d9c7e; margin-top: 9px; }
+.party-room-panel > .gold-button { width: 100%; margin-top: 26px; font-size: 11px; }
+.party-or { display: flex; gap: 15px; align-items: center; color: #7a8769; font-size: 9px; letter-spacing: 1px; margin: 27px 0; }
+.party-or > span { flex: 1; height: 1px; background: var(--line); }
+.room-code-input { display: flex; gap: 10px; }
+.room-code-input > input { font-family: var(--pixel); font-size: 25px; letter-spacing: 5px; min-width: 0; height: 47px; }
+.room-code-input > button { min-height: 47px; font-size: 10px; }
+.party-lan-settings { margin-top: 24px; font-size: 11px; color: #9e9b7e; line-height: 1.8; }
+.party-lan-settings summary { cursor: pointer; color: #b1a278; padding: 8px 0; }
+.party-lan-settings p { margin-top: 10px; color: #829176; }
+.party-lan-settings input { font-size: 11px; }
+.party-error { color: #d4a28d !important; padding: 13px 14px; margin-top: 22px !important; border-left: 2px solid #bb805f; background: #b8793510; font-size: 12px !important; line-height: 1.9; }
+.party-connecting { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
+.party-connecting > svg { color: #bcad7c; animation: binding-pulse 2s infinite; }
+.party-connecting h2 { font-family: var(--pixel); font-size: 30px; margin: 20px 0 15px; color: #cabb91; font-weight: 500; }
+.party-connecting p { font-size: 12px; color: #8e9d7f; line-height: 1.9; }
+.party-connecting button { margin-top: 23px; font-size: 10px; }
+.party-room-header > div { display: flex; gap: 17px; align-items: center; margin-top: 8px; }
+.party-room-header strong { font-family: var(--pixel); font-size: 42px; letter-spacing: 7px; font-weight: 500; color: #dfc78d; }
+.party-room-header p { margin-top: 10px; color: #9bb68b; font-size: 11px; line-height: 1.7; }
+.party-members { margin: 21px 0; border-top: 1px solid var(--line); }
+.party-members > div { display: flex; gap: 12px; align-items: center; min-height: 79px; border-bottom: 1px solid var(--line); padding: 14px 0; }
+.party-members > div > div { width: 42px; height: 49px; border: 1px solid #8f895051; overflow: hidden; }
+.party-members > div > div canvas { object-fit: cover; }
+.party-members > div > span { flex: 1; font-size: 12px; color: #9aa58b; }
+.party-members strong { display: block; font-size: 13px; color: #d1c7a4; font-weight: 500; }
+.party-members small { display: block; font-size: 10px; color: #869875; margin-top: 5px; }
+.party-members em { font-style: normal; font-size: 8px; letter-spacing: .7px; color: #b2c492; }
+.party-members .waiting > svg { color: #667255; margin: 0 7px; }
+.party-ready-actions { display: flex; align-items: center; gap: 13px; margin: 23px 0; }
+.party-ready-actions > button { flex: 1; font-size: 9px; padding: 0 14px; gap: 9px; }
+.party-ready-actions > span { font-size: 11px; color: #909d80; line-height: 1.6; }
+.party-room-panel > .text-button { font-size: 9px; }
+.party-rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; border-top: 1px solid var(--line); margin-top: 35px; padding-top: 25px; }
+.party-rules p { font-size: 11px; color: #819171; line-height: 1.9; }
+.party-rules strong { display: block; color: #c0b38c; font-weight: 500; font-size: 12px; margin-bottom: 5px; }
+
+@media (min-width: 900px) and (max-height: 760px) {
+  .main-menu { min-height: calc(100svh - 124px); padding-top: 14px; padding-bottom: 14px; }
+  .menu-composition { margin-top: 0; }
+  .menu-secondary-actions { margin-top: 14px; }
+  .menu-bottom-ornament { margin-top: 10px; }
+}
+
+@media (min-width: 1300px) { .menu-composition { margin-top: -20px; } }
+@media (max-width: 1000px) {
+  .expanded-fate .shop-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fate-toolbar .panel-tabs > button { font-size: 11px; }
+  .party-setup { grid-template-columns: 225px 1fr; gap: 27px; }
+  .party-room-panel { padding-left: 26px; }
+  .party-selected-hero { height: 260px; }
+  .party-connection-note p { font-size: 11px; }
+}
+@media (max-width: 700px) {
+  .boost-shop { grid-template-columns: 1fr 1fr; }
+  .party-setup { grid-template-columns: 1fr; gap: 28px; }
+  .party-profile { display: grid; grid-template-columns: 115px 1fr; gap: 0 20px; }
+  .party-profile .micro-label { grid-column: span 2; }
+  .party-selected-hero { grid-column: 1; grid-row: 2 / span 4; height: 181px; margin: 17px 0 0; }
+  .party-profile > input, .party-profile > select, .party-profile > label { grid-column: 2; }
+  .party-room-panel { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 27px; }
+  .party-rules { grid-template-columns: 1fr; gap: 17px; }
+  .party-rules p { font-size: 12px; }
+}
+@media (max-width: 600px) {
+  .main-menu { min-height: 630px; }
+  .menu-cast { opacity: .35; }
+  .menu-secondary-actions { gap: 24px; margin-top: 18px; }
+  .menu-secondary-actions button { font-size: 9px; }
+  .expanded-fate { width: 90%; }
+  .expanded-fate .screen-heading .eyebrow { font-size: 8px; letter-spacing: 1px; }
+  .expanded-fate .screen-heading > p { font-size: 12px; }
+  .fate-toolbar .panel-tabs { gap: 13px; }
+  .fate-toolbar .panel-tabs > button { font-size: 10px; letter-spacing: .3px; gap: 6px; padding: 18px 0; }
+  .fate-toolbar .panel-tabs svg { width: 17px; height: 17px; }
+  .wallet small { font-size: 7px; }
+  .wallet strong { font-size: 25px; }
+  .exchange-button { font-size: 8px; min-height: 35px; }
+  .expanded-fate .shop-roster { grid-template-columns: 1fr 1fr; }
+  .expanded-fate .character-role, .expanded-fate .shop-roster .character-role { font-size: 7px; letter-spacing: .3px; min-height: 24px; }
+  .expanded-fate .character-card-label h2, .expanded-fate .shop-roster .character-card-label h2 { font-size: 25px; min-height: 54px; }
+  .expanded-fate .character-traits, .expanded-fate .shop-roster .character-traits { font-size: 8px; gap: 8px; }
+  .expanded-fate .hero-ownership, .expanded-fate .shop-roster .hero-ownership { font-size: 7px; letter-spacing: .2px; line-height: 1.8; }
+  .expanded-fate .character-art { min-height: 190px; }
+  .expanded-fate .shop-roster .character-art { height: 215px; }
+  .mastery-hero-summary { gap: 12px; }
+  .expanded-fate .hero-detail-summary > div > p { font-size: 11px; }
+  .hero-passive-summary > span { font-size: 10px; }
+  .hero-passive-summary strong { font-size: 12px; }
+  .mastery-level .micro-label { font-size: 7px; }
+  .mastery-level p { font-size: 11px; }
+  .xp-only-label { font-size: 9px; }
+  .mastery-xp-caption, .mastery-xp-caption > span:last-child { font-size: 7px; }
+  .ability-unlock-level { font-size: 8px; }
+  .mastery-abilities > button { min-height: 165px; padding: 12px 7px; }
+  .mastery-abilities > button > strong { font-size: 21px; }
+  .mastery-abilities > button > small { font-size: 6.5px; letter-spacing: .2px; }
+  .mastery-ability-detail h4 { font-size: 14px; }
+  .mastery-ability-detail h4 > span { font-size: 8px; }
+  .mastery-ability-detail p { font-size: 12px; }
+  .ability-detail-meta > span { font-size: 9px; }
+  .hero-resource-note p { font-size: 11px; }
+  .attribute-heading .micro-label { font-size: 8px; }
+  .attribute-heading > span:last-child { font-size: 8px; }
+  .attribute-upgrades p { font-size: 11px; }
+  .progression-explainer { grid-template-columns: 1fr; gap: 15px; }
+  .progression-explainer p { font-size: 11px; }
+  .campaign-picker .section-subheading > span:last-child { font-size: 7px; }
+  .campaign-picker .dungeon-option { min-height: 170px; }
+  .campaign-picker .dungeon-option > div > span { font-size: 8px; }
+  .campaign-picker .dungeon-option h3 { font-size: 29px; }
+  .campaign-picker .dungeon-option p { font-size: 12px; }
+  .campaign-rule { font-size: 11px; }
+  .boost-item > p { font-size: 11px; }
+  .boost-item .micro-label { font-size: 7px; }
+  .boost-item > .outline-button { font-size: 8px; min-height: 43px; }
+  .boost-inventory, .boost-activate { font-size: 7px; line-height: 1.8; }
+  .boost-duration { font-size: 8px; }
+  .equipped-artifact p { font-size: 10px; }
+  .expanded-fate .begin-button { font-size: 10px; }
+  .fate-save-note { font-size: 9px; }
+  .compact-game .game-stage .game-viewport { height: 100%; width: 100%; max-width: none; }
+  .compact-game .game-notice { font-size: 8px; line-height: 1.5; left: 7%; width: 86%; bottom: 7px; }
+  .compact-game .interaction-hint { font-size: 7px; bottom: 33px; max-width: 94%; white-space: normal; }
+  .compact-game .combat-slot > span > strong { font-size: 10px; }
+  .compact-game .combat-focus-detail > strong { font-size: 8px; }
+  .compact-game .combat-focus-detail > span { font-size: 6px; }
+  .touch-device .touch-controls { display: flex; }
+  .party-game-status { left: 7px; top: 9px; bottom: auto; gap: 5px; font-size: 8px; padding: 4px 6px; }
+  .party-game-status strong { font-size: 12px; }
+  .party-game-status small { display: none; }
+  .party-game-status svg { width: 12px; }
+  .shared-pause-note { left: 7%; width: 86%; font-size: 11px; padding: 14px; top: 43%; }
+  .cheats-body { padding: 20px 23px 26px; }
+  .cheats-body > p { font-size: 11px; }
+  .cheat-wallet { gap: 17px; }
+  .cheat-wallet > span { font-size: 16px; gap: 5px; }
+  .cheats-body input, .cheats-body select { font-size: 14px; height: 46px; }
+  .party-screen { width: 89%; padding-top: 24px; }
+  .party-screen .screen-heading h1 { font-size: 37px; }
+  .party-screen .eyebrow { font-size: 7px; letter-spacing: 1.5px; }
+  .party-screen .screen-heading p { font-size: 12px; }
+  .party-connection-note { gap: 9px; padding-bottom: 21px; }
+  .party-connection-note svg { width: 15px; }
+  .party-screen label { font-size: 9px; letter-spacing: .7px; }
+  .party-screen input, .party-screen select { font-size: 13px; }
+  .party-room-panel > h2 { font-size: 33px; }
+  .party-room-panel > p { font-size: 12px; }
+  .party-room-header strong { font-size: 39px; letter-spacing: 6px; }
+  .party-members em { font-size: 7px; }
+  .party-members strong { font-size: 12px; }
+  .party-members small { font-size: 9px; }
+  .party-ready-actions > button { font-size: 8px; }
+}
+@media (min-width: 601px) {
+  .touch-device .touch-controls { display: flex; position: absolute; bottom: calc(var(--game-bottom) + 12px); left: 3%; right: 3%; padding: 0; height: 92px; background: transparent; justify-content: space-between; pointer-events: none; z-index: 3; }
+  .touch-device .touch-dpad { display: grid; grid-template-columns: repeat(3, 44px); grid-template-rows: 44px 44px; gap: 3px; pointer-events: auto; touch-action: none; }
+  .touch-device .touch-dpad > button { border: 1px solid #7f855477; background: #17220ddd; display: flex; justify-content: center; align-items: center; color: #bac694; touch-action: none; }
+  .touch-device .touch-dpad > button:first-child { grid-column: 2; }
+  .touch-device .touch-dpad > button:nth-child(2) { grid-column: 1; }
+  .touch-device .touch-controls > p { display: none; }
+  .touch-device .touch-controls > .icon-button { pointer-events: auto; width: 44px; height: 44px; background: #17220ddd; border: 1px solid #7f855477; }
+}
+@media (prefers-reduced-motion: reduce) { .menu-cast { animation: none; } }
