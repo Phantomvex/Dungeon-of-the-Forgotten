@@ -188,31 +188,3 @@ The synthesized soundtrack has seven biome-specific arrangements. Floor number c
 
 All fonts and artwork are served with the application. Audio starts after interaction, as required by browser autoplay policies. System reduced-motion preferences disable decorative animation and gameplay screen shake.
 
-## Manual QA
-
-- Verify the three original heroes remain free and paid heroes cannot launch without ownership.
-- Check that all heroes have six abilities, locked until the required levels, and cannot exceed level 15.
-- Earn XP, reach an even level, spend points, reload, and verify progression persists with no paid-training option.
-- Unlock the Phantom with `admin1`; confirm his power unlocks also respect mastery levels.
-- Purchase Killison for 10,000 shards and verify ritual costs cannot kill him directly.
-- Check the five new heroes, their purchase prices, and their six power unlocks.
-- Verify Phantom's base HP is 3,000 and his original powers are unchanged.
-- Collect coins, reopen the shop, exchange gold, and check balances after purchase and reload.
-- Buy a boost: only gold decreases. Recruit a hero: only Soul Shards decrease. Gaining a level never charges currency.
-- Activate a boost, pause for a while, and verify its remaining gameplay time has not changed.
-- Confirm ordinary floors lack guardians and floors 3, 6, and 9 have keyless portals at their far ends.
-- Enter each biome's portal, read or skip dialogue, defeat its guardian, and use the onward portal.
-- Verify mini-bosses occur in multiple ordinary rooms and that their rewards do not grant seals.
-- Check boss loot always appears while seal drops remain probabilistic. Collect, equip, cast, and swap seals.
-- End the run and start a new hero: no seals, charms, or dungeon-found boosts may carry over.
-- Confirm only Forsaken Halls are initially accessible; defeat its guardian and verify that Ember Foundry unlocks while later biomes remain locked. Repeat through the campaign.
-- Visit earned biomes and compare weather, geometry, traps, music, and guardian patterns.
-- Check non-currency chests, mastery rewards, capped attributes, and insufficient-funds/resource errors.
-- Check the six-slot ability row and run inventory on both keyboard and touch screens.
-- Export, change the profile, import the file, confirm exact restoration, and verify that importing twice never duplicates currency.
-- Test an invalid JSON file, altered checksum, future-version save, and damaged balances; the current profile must remain unchanged.
-- Test the old manual snapshot and pre-import recovery buttons, and export before changing the preview origin.
-- Test positive, zero, fractional, negative, and oversized cheat amounts; only valid additions should be accepted.
-- Verify every portrait and map image renders, including SVG atlas recruits and a decoded-image failure fallback.
-- On two actual devices, create/join a party, ready up, play one shared quest, pause from either side, revive a partner, clear a boss, and confirm rewards on both saves.
-- Interrupt the connection, close the host tab, and verify there is an explicit paused/disconnected state rather than a simulated solo continuation.
