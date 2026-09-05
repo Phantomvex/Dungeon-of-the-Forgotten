@@ -143,20 +143,6 @@ The backup includes essential progression, campaign clears, purchased boosts, pe
 
 Imports are disabled during an active run, but saving and exporting are available while paused. Local storage is tied to the browser and site origin; it cannot automatically follow a changed preview URL. The downloaded file is the portable backup for that situation. Saves do not use a cloud account or server. The checksum detects file damage, not deliberate tampering.
 
-## Testing Cheats
-
-The main menu's **Cheats** panel is admin-only. Enter `admin1` (case-sensitive, lowercase) to unlock it. It shares the current session's admin access with the Phantom unlock; reloading locks access again. Admin access and the password are not persisted in saves or exports. Both the panel and the cheat-application handler check admin access. This remains a client-side testing lock, not secure server-side authentication.
-
-Once authenticated, the panel adds a custom positive whole-number amount of gold, Soul Shards, or XP for an owned hero. Inputs are capped at 1,000,000 per action. These are explicit local testing tools, not part of normal progression. Level and attribute caps remain enforced; cheats do not unlock the biome campaign. Cheats cannot modify an active solo or party quest. Export a clean save first if you want to restore it later.
-
-## Presentation
-
-Every non-Phantom hero has a reworked upright pixel model with clearer anatomy, distinct costume palettes, headgear, armor, robe folds, and appropriately sized weapons. Phantom's original model and powers are preserved. Weapon arcs and weapon size have been reduced; the player body no longer tilts into a crooked attack pose. The hero detail screen retains its animated preview.
-
-Portraits and biome art are now explicit bundled assets rendered through canvas crops, with a drawn fallback if decoding fails. This avoids fragile nested SVG image references and missing loose `/images` files in single-file previews. The old title background was replaced by a self-contained pixel dungeon assembly, with Phantom centered among several powerful heroes. Rain, snow, ash, spores, sand, or astral motes vary by biome and intensity over time.
-
-The synthesized soundtrack has seven biome-specific arrangements. Floor number changes melody, pitch, and tempo; guardian portals switch to the boss score. Boss dialogue is readable and skippable, and combat remains paused until you choose to face the guardian. The compact combat dock groups all six abilities together; selecting or focusing an icon reveals its full name and cost without spreading controls across the screen.
-
 ## Implementation
 
 - `src/App.tsx`: application screens, shared settings, audio, and saved progression.
